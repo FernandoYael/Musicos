@@ -7,7 +7,7 @@
     }
     public void Saludar()
     {
-        Console.WriteLine("Hola");
+        Console.WriteLine($"Hola soy {Nombre}");
     }
     public virtual void Tocar()
     {
@@ -15,14 +15,30 @@
     }
 }
 
-class Baterista
+class Baterista:Musico
 {
-    //Bateria
+    public string Bajo{get;set;}
+    public Baterista(string n, string b):base(n)
+    {
+        this.Bajo=b;
+    }
+    public override void Tocar()
+    {
+        Console.WriteLine($"{Nombre} toca su {Bajo}");
+    }
 }
 
-class Bajista
+class Bajista:Musico
 {
-    //Bajista
+    public string Bajo{get;set;}
+    public Bajista(string n, string b):base(n)
+    {
+        this.Bajo=b;
+    }
+    public override void Tocar()
+    {
+        Console.WriteLine($"{Nombre} toca su {Bajo}");
+    }
 }
 
 //class Guitarrista
@@ -44,5 +60,13 @@ internal class Program
         Musico L = new Musico("L");
         L.Saludar();
         L.Tocar();
+
+        Bajista A = new Bajista("A", "Musicaman");
+        A.Saludar();
+        A.Tocar();
+
+        Baterista B = new Baterista("B", "Tama");
+        B.Saludar();
+        B.Tocar();
     }
 }
