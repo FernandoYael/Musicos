@@ -17,14 +17,14 @@
 
 class Baterista:Musico
 {
-    public string Bajo{get;set;}
-    public Baterista(string n, string b):base(n)
+    public string Bateria{get;set;}
+    public Baterista(string n, string bt):base(n)
     {
-        this.Bajo=b;
+        this.Bateria=bt;
     }
     public override void Tocar()
     {
-        Console.WriteLine($"{Nombre} toca su {Bajo}");
+        Console.WriteLine($"{Nombre} toca su {Bateria}");
     }
 }
 
@@ -41,15 +41,31 @@ class Bajista:Musico
     }
 }
 
-//class Guitarrista
-//{
-    //Guitarra
-//}
+class Guitarrista:Musico
+{
+    public string Guitarra{get;set;}
+    public Guitarrista(string n, string g):base(n)
+    {
+        this.Guitarra=g;
+    }
+    public override void Tocar()
+    {
+        Console.WriteLine($"{Nombre} toca su {Guitarra}");
+    }
+}
 
-//class Vocalista
-//{
-    //Microfono
-//}
+class Vocalista: Musico
+{
+    public string Microfono{get;set;}
+    public Vocalista(string n, string m):base(n)
+    {
+        this.Microfono=m;
+    }
+    public override void Tocar()
+    {
+        Console.WriteLine($"{Nombre} canta en su {Microfono}");
+    }
+}
 
 
 
@@ -57,16 +73,24 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Musico L = new Musico("L");
-        L.Saludar();
-        L.Tocar();
+        List<Musico> grupo = new List<Musico>();
+        grupo.Add(new Vocalista("A","Mix"));
+        grupo.Add(new Guitarrista("B","Mix"));
+        grupo.Add(new Bajista("C","Mix"));        
+        grupo.Add(new Baterista("D","Mix"));
+        foreach (var m in grupo) m.Saludar();
+        foreach (var m in grupo) m.Tocar();
 
-        Bajista A = new Bajista("A", "Musicaman");
-        A.Saludar();
-        A.Tocar();
+        //Musico L = new Musico("L");
+        //L.Saludar();
+        //L.Tocar();
 
-        Baterista B = new Baterista("B", "Tama");
-        B.Saludar();
-        B.Tocar();
+        //Bajista A = new Bajista("A", "Musicaman");
+        //A.Saludar();
+        //A.Tocar();
+
+        //Baterista B = new Baterista("B", "Tama");
+        //B.Saludar();
+        //B.Tocar();
     }
 }
