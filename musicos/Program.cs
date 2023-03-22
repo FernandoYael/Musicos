@@ -76,8 +76,8 @@ internal class Program
         List<Musico> grupo = new List<Musico>();
         grupo.Add(new Vocalista("A","Mix"));
         grupo.Add(new Guitarrista("B","Mix"));
-        grupo.Add(new Bajista("C","Mix"));        
-        grupo.Add(new Baterista("D","Mix"));
+        grupo.Add(new Bajista("π","Mix"));        
+        grupo.Add(new Baterista("2π","Mix"));
         foreach (var m in grupo) m.Saludar();
         foreach (var m in grupo) m.Tocar();
 
