@@ -5,10 +5,8 @@
     {
         Nombre=nombre;
     }
-    public virtual string GetSaludar()
-    {
-        ("Hola soy " {Nombre});
-    }
+    public virtual string GetSaludar() => "Hola soy " + {Nombre};
+    
     public virtual string PrintSaludar()
     {
         Console.WriteLine(GetSaludar());
