@@ -5,7 +5,7 @@
     {
         Nombre=nombre;
     }
-    public void Saludar()
+    public virtual void Saludar()
     {
         Console.WriteLine($"Hola soy {Nombre}");
     }
@@ -22,6 +22,10 @@ class Baterista:Musico
     public override void Tocar()
     {
         Console.WriteLine($"{Nombre} toca su {Bateria}");
+    }
+    public override void Saludar()
+    {
+        Console.WriteLine($"Hola soy {Nombre} y soy baterista");
     }
 }
 
