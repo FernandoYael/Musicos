@@ -1,4 +1,4 @@
-﻿class Musico
+﻿abstract class Musico
 {
     public string Nombre {get; set;}
     public Musico(string nombre)
@@ -9,10 +9,7 @@
     {
         Console.WriteLine($"Hola soy {Nombre}");
     }
-    public virtual void Tocar()
-    {
-        Console.WriteLine($"{Nombre} esta tocando su Instrumento");
-    }
+    public abstract void Tocar();
 }
 
 class Baterista:Musico
