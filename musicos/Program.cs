@@ -5,9 +5,13 @@
     {
         Nombre=nombre;
     }
-    public virtual void Saludar()
+    public virtual string GetSaludar()
     {
-        Console.WriteLine($"Hola soy {Nombre}");
+        ("Hola soy " {Nombre});
+    }
+    public virtual string PrintSaludar()
+    {
+        Console.WriteLine(GetSaludar());
     }
     public abstract void Tocar();
 }
@@ -23,9 +27,16 @@ class Baterista:Musico
     {
         Console.WriteLine($"{Nombre} toca su {Bateria}");
     }
-    public override void Saludar()
+    public override string GetSaludar()
     {
-        Console.WriteLine($"Hola soy {Nombre} y soy baterista");
+        base.GetSaludar + " y soy baterista";
+    }
+    public override string PrintSaludar()
+    {
+        return base.Saludar();
+        {
+            Console.WriteLine(GetSaludar());
+        }
     }
 }
 
